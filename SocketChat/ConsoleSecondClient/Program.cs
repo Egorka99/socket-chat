@@ -38,7 +38,7 @@ namespace ConsoleSecondClient
                     // получаем ответ
                     data = new byte[256]; // буфер для ответа
                     StringBuilder builder = new StringBuilder();
-                    int bytes = 0; // количество полученных байт
+                    int bytes = 0; // количество полученных байт 
 
                     do
                     {
@@ -46,7 +46,7 @@ namespace ConsoleSecondClient
                         builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
                     }
                     while (socket.Available > 0);
-                    Console.WriteLine("ответ сервера: " + builder.ToString());
+                    Console.WriteLine("сообщение доставлено! ");
 
                     // закрываем сокет
                     socket.Shutdown(SocketShutdown.Both);
