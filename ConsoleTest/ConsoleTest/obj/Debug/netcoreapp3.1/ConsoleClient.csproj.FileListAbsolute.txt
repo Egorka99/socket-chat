@@ -1,0 +1,11 @@
+D:\csharp\socket-chat\ConsoleTest\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleClient.exe
+D:\csharp\socket-chat\ConsoleTest\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleClient.deps.json
+D:\csharp\socket-chat\ConsoleTest\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleClient.runtimeconfig.json
+D:\csharp\socket-chat\ConsoleTest\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleClient.runtimeconfig.dev.json
+D:\csharp\socket-chat\ConsoleTest\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleClient.dll
+D:\csharp\socket-chat\ConsoleTest\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleClient.pdb
+D:\csharp\socket-chat\ConsoleTest\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleClient.csprojAssemblyReference.cache
+D:\csharp\socket-chat\ConsoleTest\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleClient.AssemblyInfoInputs.cache
+D:\csharp\socket-chat\ConsoleTest\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleClient.AssemblyInfo.cs
+D:\csharp\socket-chat\ConsoleTest\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleClient.dll
+D:\csharp\socket-chat\ConsoleTest\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleClient.pdb

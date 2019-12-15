@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Егор\\source\\repos\\ConsoleTest\\ConsoleTest\\ConsoleTest.csproj",
-      "projectName": "ConsoleTest",
-      "projectPath": "C:\\Users\\Егор\\source\\repos\\ConsoleTest\\ConsoleTest\\ConsoleTest.csproj",
+      "projectUniqueName": "D:\\csharp\\socket-chat\\ConsoleTest\\ConsoleTest\\ConsoleFirstClient.csproj",
+      "projectName": "ConsoleFirstClient",
+      "projectPath": "D:\\csharp\\socket-chat\\ConsoleTest\\ConsoleTest\\ConsoleFirstClient.csproj",
       "packagesPath": "C:\\Users\\Егор\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Егор\\source\\repos\\ConsoleTest\\ConsoleTest\\obj\\",
+      "outputPath": "D:\\csharp\\socket-chat\\ConsoleTest\\ConsoleTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Егор\\AppData\\Roaming\\NuGet\\NuGet.Config",

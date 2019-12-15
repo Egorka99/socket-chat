@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Егор\\source\\repos\\ConsoleTest\\ConsoleTest\\ConsoleTest.csproj": {}
+    "D:\\csharp\\socket-chat\\ConsoleTest\\ConsoleTest\\ConsoleTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Егор\\source\\repos\\ConsoleTest\\ConsoleTest\\ConsoleTest.csproj": {
+    "D:\\csharp\\socket-chat\\ConsoleTest\\ConsoleTest\\ConsoleTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Егор\\source\\repos\\ConsoleTest\\ConsoleTest\\ConsoleTest.csproj",
+        "projectUniqueName": "D:\\csharp\\socket-chat\\ConsoleTest\\ConsoleTest\\ConsoleTest.csproj",
         "projectName": "ConsoleTest",
-        "projectPath": "C:\\Users\\Егор\\source\\repos\\ConsoleTest\\ConsoleTest\\ConsoleTest.csproj",
+        "projectPath": "D:\\csharp\\socket-chat\\ConsoleTest\\ConsoleTest\\ConsoleTest.csproj",
         "packagesPath": "C:\\Users\\Егор\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Егор\\source\\repos\\ConsoleTest\\ConsoleTest\\obj\\",
+        "outputPath": "D:\\csharp\\socket-chat\\ConsoleTest\\ConsoleTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Егор\\AppData\\Roaming\\NuGet\\NuGet.Config",
