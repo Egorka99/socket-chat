@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\csharp\\console-socket-chat\\ConsoleTest\\Server\\ServerApp.csproj": {}
+    "D:\\csharp\\socket-chat\\SocketChat\\Server\\ServerApp.csproj": {}
   },
   "projects": {
-    "D:\\csharp\\console-socket-chat\\ConsoleTest\\Server\\ServerApp.csproj": {
+    "D:\\csharp\\socket-chat\\SocketChat\\Server\\ServerApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\csharp\\console-socket-chat\\ConsoleTest\\Server\\ServerApp.csproj",
+        "projectUniqueName": "D:\\csharp\\socket-chat\\SocketChat\\Server\\ServerApp.csproj",
         "projectName": "ServerApp",
-        "projectPath": "D:\\csharp\\console-socket-chat\\ConsoleTest\\Server\\ServerApp.csproj",
+        "projectPath": "D:\\csharp\\socket-chat\\SocketChat\\Server\\ServerApp.csproj",
         "packagesPath": "C:\\Users\\Егор\\.nuget\\packages\\",
-        "outputPath": "D:\\csharp\\console-socket-chat\\ConsoleTest\\Server\\obj\\",
+        "outputPath": "D:\\csharp\\socket-chat\\SocketChat\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Егор\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -15,14 +15,14 @@ namespace SocketChat
     public partial class SecondClient : Form
     {
         // адрес и порт сервера, к которому будем подключаться
-        static int port = 8888; 
-        static string address = "127.0.0.1"; 
-        static string UserName = ""; 
+        static int port = 8888;
+        static string address = "127.0.0.1";
+        static string userName = "";
         Socket socket;
-         
+
         public SecondClient()
         {
-            InitializeComponent(); 
+            InitializeComponent();
 
             textBoxMessage.KeyDown += new KeyEventHandler(textBoxMessage_KeyDown);
         }
@@ -34,19 +34,20 @@ namespace SocketChat
 
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту
-            socket.Connect(ipPoint); 
+            socket.Connect(ipPoint);
         }
 
         public void SendMessage() 
         {
             try
             {
+
                 string message = textBoxMessage.Text;
 
                 // ввод сообщения
-                listBoxChat.Items.Add(UserName + ": " + message);
+                listBoxChat.Items.Add(userName + ": " + message);
 
-                message = string.Format("{0}: {1}", UserName, message);
+                message = string.Format("{0}: {1}", userName, message);
 
                 // преобразуем сообщение в массив байтов
                 byte[] data = Encoding.Unicode.GetBytes(message);
@@ -55,7 +56,7 @@ namespace SocketChat
 
                 // получаем ответ
                 data = new byte[256]; // буфер для ответа 
-                StringBuilder builder = new StringBuilder(); 
+                StringBuilder builder = new StringBuilder();
                 int bytes = 0; // количество полученных байт
 
                 do
@@ -76,6 +77,7 @@ namespace SocketChat
             }
         }
 
+
         void textBoxMessage_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) // событие пробела на текстбоксе 
@@ -88,16 +90,17 @@ namespace SocketChat
         {
             SendMessage();
         }
-         
+
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             // кнопка входа клиента 
-            UserName = textBoxName.Text;
-            Connect();  
+            userName = textBoxName.Text;
+            Connect();
             buttonSend.Enabled = true;
             buttonEnter.Enabled = false;
         }
-
     }
+
 }
  
+  
