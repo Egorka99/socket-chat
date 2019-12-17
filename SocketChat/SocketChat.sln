@@ -3,13 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketChat", "SocketChat\SocketChat.csproj", "{2209FCDF-2271-42F4-9A52-4FAAE6CC54D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketChat", "SocketChat\SocketChat.csproj", "{A0E9C39A-A5A4-4577-B681-3A02397C33F2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleFirstClient", "..\ConsoleTest\ConsoleTest\ConsoleFirstClient.csproj", "{A64A953E-C756-4EC9-BFA7-D98D8A369CE7}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleServer", "..\ConsoleTest\Server\ConsoleServer.csproj", "{654B9D0F-CB03-458C-917B-B46AC1BAADC2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleSecondClient", "ConsoleSecondClient\ConsoleSecondClient.csproj", "{C8B76628-3C57-47C7-9FD7-015276297C66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerApp", "..\..\console-socket-chat\ConsoleTest\Server\ServerApp.csproj", "{CFC7655F-FDAE-4A21-8760-E639048271A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,27 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2209FCDF-2271-42F4-9A52-4FAAE6CC54D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2209FCDF-2271-42F4-9A52-4FAAE6CC54D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2209FCDF-2271-42F4-9A52-4FAAE6CC54D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2209FCDF-2271-42F4-9A52-4FAAE6CC54D2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A64A953E-C756-4EC9-BFA7-D98D8A369CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A64A953E-C756-4EC9-BFA7-D98D8A369CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A64A953E-C756-4EC9-BFA7-D98D8A369CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A64A953E-C756-4EC9-BFA7-D98D8A369CE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{654B9D0F-CB03-458C-917B-B46AC1BAADC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{654B9D0F-CB03-458C-917B-B46AC1BAADC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{654B9D0F-CB03-458C-917B-B46AC1BAADC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{654B9D0F-CB03-458C-917B-B46AC1BAADC2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C8B76628-3C57-47C7-9FD7-015276297C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C8B76628-3C57-47C7-9FD7-015276297C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C8B76628-3C57-47C7-9FD7-015276297C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C8B76628-3C57-47C7-9FD7-015276297C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0E9C39A-A5A4-4577-B681-3A02397C33F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0E9C39A-A5A4-4577-B681-3A02397C33F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0E9C39A-A5A4-4577-B681-3A02397C33F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0E9C39A-A5A4-4577-B681-3A02397C33F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFC7655F-FDAE-4A21-8760-E639048271A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC7655F-FDAE-4A21-8760-E639048271A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC7655F-FDAE-4A21-8760-E639048271A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC7655F-FDAE-4A21-8760-E639048271A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {AB555140-C4CA-49B4-ADFE-438D7E1DB542}
+		SolutionGuid = {0D264886-7337-4A37-A9A4-835930C754D9}
 	EndGlobalSection
 EndGlobal
