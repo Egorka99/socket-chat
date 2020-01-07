@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net;
+using System.Net; 
 using System.Net.Sockets;
 using System.Threading;
 using Microsoft.VisualBasic;
@@ -15,15 +15,15 @@ using Microsoft.VisualBasic;
 
 namespace SocketChat
 {
-    public partial class FirstClient : Form 
+    public partial class FirstClient : Form
     {
         // адрес и порт сервера, к которому будем подключаться
-        static int port = 8888;  
-        static string address = "127.0.0.1"; 
-        static string userName ="";
+        static int port = 8888;
+        static string address = "127.0.0.1";
+        static string userName = "";
         Socket socket;
 
-        public FirstClient() 
+        public FirstClient()
         {
             InitializeComponent();
 
@@ -39,12 +39,12 @@ namespace SocketChat
             // подключаемся к удаленному хосту
             socket.Connect(ipPoint);
         }
-
+         
         public void SendMessage()
-        {
+        {  
             try
             {
-         
+                Connect();
                 string message = textBoxMessage.Text;
 
                 // ввод сообщения
@@ -73,8 +73,8 @@ namespace SocketChat
                 // закрываем сокет 
                 socket.Shutdown(SocketShutdown.Both);
                 socket.Close();
-            }
-            catch (Exception ex)
+            } 
+            catch (Exception ex) 
             {
                 MessageBox.Show(ex.Message);
             }
@@ -91,7 +91,7 @@ namespace SocketChat
 
         private void buttonSend_Click(object sender, EventArgs e)
         {
-            SendMessage(); 
+            SendMessage();
         }
 
         private void FirstClient_Load(object sender, EventArgs e)
@@ -100,13 +100,13 @@ namespace SocketChat
             f2.Show();
         }
 
-        private void buttonEnter_Click(object sender, EventArgs e)
+        private void buttonEnter_Click(object sender, EventArgs e) 
         {
             // кнопка входа клиента 
             userName = textBoxName.Text;
             Connect();
             buttonSend.Enabled = true;
-            buttonEnter.Enabled = false; 
+            buttonEnter.Enabled = false;
         }
     }
 } 

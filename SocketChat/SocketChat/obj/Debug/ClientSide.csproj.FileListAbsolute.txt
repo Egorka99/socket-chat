@@ -1,0 +1,10 @@
+D:\csharp\socket-chat\SocketChat\SocketChat\bin\Debug\SocketChat.exe.config
+D:\csharp\socket-chat\SocketChat\SocketChat\bin\Debug\SocketChat.exe
+D:\csharp\socket-chat\SocketChat\SocketChat\bin\Debug\SocketChat.pdb
+D:\csharp\socket-chat\SocketChat\SocketChat\obj\Debug\ClientSide.csprojAssemblyReference.cache
+D:\csharp\socket-chat\SocketChat\SocketChat\obj\Debug\SocketChat.FirstClient.resources
+D:\csharp\socket-chat\SocketChat\SocketChat\obj\Debug\SocketChat.Properties.Resources.resources
+D:\csharp\socket-chat\SocketChat\SocketChat\obj\Debug\SocketChat.SecondClient.resources
+D:\csharp\socket-chat\SocketChat\SocketChat\obj\Debug\ClientSide.csproj.GenerateResource.cache
+D:\csharp\socket-chat\SocketChat\SocketChat\obj\Debug\SocketChat.exe
+D:\csharp\socket-chat\SocketChat\SocketChat\obj\Debug\SocketChat.pdb

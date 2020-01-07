@@ -8,7 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
-using System.Net.Sockets; 
+using System.Net.Sockets;
+using System.Threading;
+using Microsoft.VisualBasic;
+
 
 namespace SocketChat
 {
@@ -20,8 +23,8 @@ namespace SocketChat
         static string userName = "";
         Socket socket;
 
-        public SecondClient()
-        {
+        public SecondClient() 
+        { 
             InitializeComponent();
 
             textBoxMessage.KeyDown += new KeyEventHandler(textBoxMessage_KeyDown);
@@ -37,11 +40,11 @@ namespace SocketChat
             socket.Connect(ipPoint);
         }
 
-        public void SendMessage() 
+        public void SendMessage()
         {
             try
             {
-
+                Connect(); 
                 string message = textBoxMessage.Text;
 
                 // ввод сообщения
@@ -91,16 +94,20 @@ namespace SocketChat
             SendMessage();
         }
 
-        private void buttonEnter_Click(object sender, EventArgs e)
+        private void FirstClient_Load(object sender, EventArgs e)
         {
+            Form f2 = new SecondClient(); // открываем форму для второго клиента 
+            f2.Show();
+        }
+
+        private void buttonEnter_Click(object sender, EventArgs e)
+        { 
             // кнопка входа клиента 
             userName = textBoxName.Text;
             Connect();
             buttonSend.Enabled = true;
-            buttonEnter.Enabled = false;
-        }
+            buttonEnter.Enabled = false; 
+        } 
     }
-
 }
  
-  
