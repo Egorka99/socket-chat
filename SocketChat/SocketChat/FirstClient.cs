@@ -28,12 +28,8 @@ namespace SocketChat
         public FirstClient()
         {
             InitializeComponent();
-            Connect();
             textBoxMessage.KeyDown += new KeyEventHandler(textBoxMessage_KeyDown);
             Updater = new updater(Update);
-            Listener = new Thread(new ThreadStart(ReceiveMessages));
-            Listener.IsBackground = true;
-            Listener.Start();
         }
            
         public void Connect()
@@ -51,14 +47,13 @@ namespace SocketChat
             {
                 string message = textBoxMessage.Text;
 
-                message = string.Format("{0}: {1}", userName, message) + '\n';
+                message = string.Format("{0}: {1}", userName, message);
 
                 // преобразуем сообщение в массив байтов 
                 byte[] data = Encoding.Unicode.GetBytes(message);
                 // отправка сообщения 
-                socket.Send(data);
-                 
-            } 
+                socket.Send(data);    
+            }  
             catch (Exception ex) 
             {
                 MessageBox.Show(ex.Message);      
@@ -85,19 +80,18 @@ namespace SocketChat
                 String Data = builder.ToString();
 
                 Update(Data);
-
             }
-        }
+        } 
           
         void Update(String Data)
         {
             if (this.InvokeRequired)
-            {  
-                this.Invoke(Updater,Data);
+            {
+                this.Invoke(Updater, Data);
                 return;
             }
             listBoxChat.Items.Add(Data);
-        }
+        } 
           
 
         void textBoxMessage_KeyDown(object sender, KeyEventArgs e)
@@ -113,17 +107,14 @@ namespace SocketChat
             SendMessage();
         }
 
-        private void FirstClient_Load(object sender, EventArgs e)
-        {
-            Form f2 = new SecondClient(); // открываем форму для второго клиента 
-            f2.Show();
-        }
-
         private void buttonEnter_Click(object sender, EventArgs e) 
         {
             // кнопка входа клиента 
             userName = textBoxName.Text;
             Connect();
+            Listener = new Thread(new ThreadStart(ReceiveMessages));
+            Listener.IsBackground = true;
+            Listener.Start();
             buttonSend.Enabled = true;
             buttonEnter.Enabled = false;
         }

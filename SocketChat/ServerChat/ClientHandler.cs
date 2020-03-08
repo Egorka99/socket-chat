@@ -42,12 +42,9 @@ namespace ConsoleServer
 
                     data = Encoding.Unicode.GetBytes(message);
 
-                    int c = 1;
                     foreach (var item in Server.GetServerList())
                     {
-                        item.AcceptedSocket.Send(data);
-                        Console.WriteLine("Отправлено клиенту " + c);
-                        c++;
+                        item.AcceptedSocket.Send(data); 
                     } 
                    
                 } 

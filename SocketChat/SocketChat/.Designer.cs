@@ -102,7 +102,6 @@
             this.Controls.Add(this.listBoxChat);
             this.Name = "FirstClient";
             this.Text = "FirstClient";
-            this.Load += new System.EventHandler(this.FirstClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

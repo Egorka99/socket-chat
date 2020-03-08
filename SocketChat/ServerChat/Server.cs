@@ -18,7 +18,7 @@ namespace ConsoleServer
         {
             return ServerList; 
         }
-        static void Main(string[] args) 
+        static void Main(string[] args)  
         {
             // получаем адреса для запуска сокета
             IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(Address), Port);
