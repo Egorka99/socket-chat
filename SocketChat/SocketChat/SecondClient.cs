@@ -23,14 +23,14 @@ namespace SocketChat
         static string userName = "";
         Socket socket;
 
-        public SecondClient() 
-        { 
+        public SecondClient()
+        {
             InitializeComponent();
 
             textBoxMessage.KeyDown += new KeyEventHandler(textBoxMessage_KeyDown);
         }
 
-        public void Connect()
+        public void Connect() 
         {
             // получаем адрес для запуска сокета
             IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
@@ -44,7 +44,6 @@ namespace SocketChat
         {
             try
             {
-                Connect(); 
                 string message = textBoxMessage.Text;
 
                 // ввод сообщения
@@ -68,12 +67,10 @@ namespace SocketChat
                     builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
                 }
                 while (socket.Available > 0);
-                listBoxChat.Items.Add("Сообщение доставлено!");
 
-                // закрываем сокет 
-                socket.Shutdown(SocketShutdown.Both);
-                socket.Close();
-            }
+                listBoxChat.Items.Add(builder.ToString()); 
+
+            } 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -98,16 +95,17 @@ namespace SocketChat
         {
             Form f2 = new SecondClient(); // открываем форму для второго клиента 
             f2.Show();
+
+            Connect();
         }
 
         private void buttonEnter_Click(object sender, EventArgs e)
-        { 
+        {
             // кнопка входа клиента 
             userName = textBoxName.Text;
             Connect();
             buttonSend.Enabled = true;
-            buttonEnter.Enabled = false; 
-        } 
+            buttonEnter.Enabled = false;
+        }
     }
 }
- 

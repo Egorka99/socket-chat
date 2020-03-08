@@ -2,17 +2,23 @@
 using System.Text;
 using System.Net;
 using System.Net.Sockets;
-using System.Threading; 
+using System.Threading;
+using System.Collections.Generic;
 
 namespace ConsoleServer
 {
-    public class App
+    public class Server
     {
         const int Port = 8888;
-        const string Address = "127.0.0.1";
+        const string Address = "127.0.0.1"; 
         static Socket ListenSocket;
+        static List<ClientHandler> ServerList = new List<ClientHandler>();
 
-        static void Main(string[] args)
+        public static List<ClientHandler> GetServerList()
+        {
+            return ServerList; 
+        }
+        static void Main(string[] args) 
         {
             // получаем адреса для запуска сокета
             IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(Address), Port);
@@ -33,13 +39,13 @@ namespace ConsoleServer
                     //прием подключенного клиента 
                     Socket AcceptedSocket = ListenSocket.Accept(); 
                     ClientHandler ClientHandler = new ClientHandler(AcceptedSocket);
-
+                    ServerList.Add(ClientHandler);
                     // создаем новый поток для обслуживания нового клиента
                     Thread ClientThread = new Thread(new ThreadStart(ClientHandler.Process));
                     ClientThread.Start();
 
                 }
-            }
+            } 
             catch (Exception ex) 
             {
                 Console.WriteLine(ex.Message);

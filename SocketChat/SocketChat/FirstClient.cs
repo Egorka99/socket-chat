@@ -22,64 +22,83 @@ namespace SocketChat
         static string address = "127.0.0.1";
         static string userName = "";
         Socket socket;
-
+        Thread Listener;
+        delegate void updater(string Data);
+        updater Updater; 
         public FirstClient()
         {
             InitializeComponent();
-
+            Connect();
             textBoxMessage.KeyDown += new KeyEventHandler(textBoxMessage_KeyDown);
+            Updater = new updater(Update);
+            Listener = new Thread(new ThreadStart(ReceiveMessages));
+            Listener.IsBackground = true;
+            Listener.Start();
         }
-
+           
         public void Connect()
         {
             // получаем адрес для запуска сокета
             IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse(address), port);
-
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             // подключаемся к удаленному хосту
             socket.Connect(ipPoint);
         }
          
         public void SendMessage()
-        {  
+        {   
             try
             {
-                Connect();
                 string message = textBoxMessage.Text;
 
-                // ввод сообщения
-                listBoxChat.Items.Add(userName + ": " + message);
+                message = string.Format("{0}: {1}", userName, message) + '\n';
 
-                message = string.Format("{0}: {1}", userName, message);
-
-                // преобразуем сообщение в массив байтов
+                // преобразуем сообщение в массив байтов 
                 byte[] data = Encoding.Unicode.GetBytes(message);
                 // отправка сообщения 
                 socket.Send(data);
+                 
+            } 
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);      
+            }
+        }
 
+
+        void ReceiveMessages()
+        {
+            while(socket.Connected) 
+            {
                 // получаем ответ
-                data = new byte[256]; // буфер для ответа 
+                byte[] data = new byte[256]; // буфер для ответа 
                 StringBuilder builder = new StringBuilder();
                 int bytes = 0; // количество полученных байт
 
-                do
+                do 
                 {
                     bytes = socket.Receive(data, data.Length, 0);
                     builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
                 }
                 while (socket.Available > 0);
-                listBoxChat.Items.Add("Сообщение доставлено!");
 
-                // закрываем сокет 
-                socket.Shutdown(SocketShutdown.Both);
-                socket.Close();
-            } 
-            catch (Exception ex) 
-            {
-                MessageBox.Show(ex.Message);
+                String Data = builder.ToString();
+
+                Update(Data);
+
             }
         }
-
+          
+        void Update(String Data)
+        {
+            if (this.InvokeRequired)
+            {  
+                this.Invoke(Updater,Data);
+                return;
+            }
+            listBoxChat.Items.Add(Data);
+        }
+          
 
         void textBoxMessage_KeyDown(object sender, KeyEventArgs e)
         {

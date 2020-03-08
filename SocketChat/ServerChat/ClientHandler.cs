@@ -40,16 +40,19 @@ namespace ConsoleServer
 
                     Console.WriteLine(message);
 
-                    message = message.Substring(message.IndexOf(':') + 1).Trim().ToUpper();
                     data = Encoding.Unicode.GetBytes(message);
-                    AcceptedSocket.Send(data);
 
-                    // закрываем сокет
-                    AcceptedSocket.Shutdown(SocketShutdown.Both);
-                    AcceptedSocket.Close();
-                }
+                    int c = 1;
+                    foreach (var item in Server.GetServerList())
+                    {
+                        item.AcceptedSocket.Send(data);
+                        Console.WriteLine("Отправлено клиенту " + c);
+                        c++;
+                    } 
+                   
+                } 
             }  
-            catch (Exception ex)
+            catch (Exception ex) 
             {}
         } 
     }
